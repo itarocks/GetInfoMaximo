@@ -7,15 +7,6 @@
 <title>Livros Casa do Codigo</title>
 </head>
 <body>
-
-<h1>
-Casa do codigo
-</h1>
-<table>
-<tr>
-<td>Java 8</td>
-<td> Certificacao OCJP</td>
-</tr>
-</table>
+<h1>Produto Cadastrado com Sucesso</h1>
 </body>
 </html>
