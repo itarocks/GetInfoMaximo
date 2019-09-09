@@ -19,7 +19,11 @@ public class ProdutoDao {
 
 	public void gravar(Produto produto) {
 
-		manager.persist(produto);
+		try{
+		   manager.persist(produto);
+		}catch(Exception e) {
+			System.out.println("O erro é " + e);
+		}
 
 	}
 
