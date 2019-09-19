@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.model;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.ElementCollection;
@@ -113,6 +114,13 @@ public class Produto {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	public BigDecimal precoPara(TipoPreco tipoPreco) {
+	
+		return precos.stream().filter(preco -> preco.getTipo().equals(tipoPreco))
+				.findFirst().get().getValor();
+		
 	}
 	
 	
