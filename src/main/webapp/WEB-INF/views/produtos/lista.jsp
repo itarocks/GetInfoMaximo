@@ -7,6 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Livros Casa do Codigo</title>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css" >
+<script src="resources/js/bootstrap.min.js" ></script>
 </head>
 <body>
 	<h1>Lista de Produtos</h1>

@@ -9,6 +9,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Livros Casa do Codigo</title>
+
+<c:url value="/resources/css" var="cssPath"/>
+<link rel="stylesheet" href="${cssPath}/bootstrap.min.css" >
+<link rel="stylesheet" href="${cssPath}/bootstrap-theme.min.css" >
 </head>
 <body>
 
