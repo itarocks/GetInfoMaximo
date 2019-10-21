@@ -38,6 +38,10 @@ import br.com.casadocodigo.loja.model.CarrinhoCompras;
 @ComponentScan(basePackageClasses={HomeController.class, ProdutoDao.class, FileSaver.class, CarrinhoCompras.class})
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
+	
+	
+	
+	
 
 	@Bean
 	public InternalResourceViewResolver internalResouceViewResolver() {
