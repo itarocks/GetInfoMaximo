@@ -23,12 +23,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter  {
 		
 		http.authorizeRequests()
 		.antMatchers("/css/**", "/js/**").permitAll()
-		.antMatchers("/resources/**").permitAll()
 		.antMatchers("/produtos/form").hasRole("ADMIN")
 		.antMatchers("/carrinho").permitAll()
 		.antMatchers(HttpMethod.POST, "/produtos").hasRole("ADMIN")
 		.antMatchers(HttpMethod.GET,"/produtos").hasRole("ADMIN")
 		.antMatchers("/produtos/**").permitAll()
+		.antMatchers("/resources/**").permitAll()
 		.antMatchers("/").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin();

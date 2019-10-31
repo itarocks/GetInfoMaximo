@@ -4,3 +4,27 @@
 --> UDS
     User Detail Service
     
+ -->
+ 
+ Taglibs do spring security
+ 
+ --> Evitando ataques do tipo CSRF-Cross site request forgery
+ 	--> Parametro csrf
+ 	
+--> Personalizando o Login e Logout 
+
+	-->
+	
+--> Aula 05 
+	Views com templates 
+--> utilizando o include
+
+--> TAG do TEMPLATE
+	--> Framework de template 
+	
+	
+ 	
+ 	
+ 
+ 
+    

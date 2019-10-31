@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,10 +31,18 @@
         <a class="nav-link" href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos <span class="sr-only">(página atual)</span></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <ul class="nav navbar-nav nav-rigth">
+    <li>
+    <a href="#"> 
+    	<security:authentication property="principal.username"/>
+    </a>
+    </li>
+    </ul>
+    
+   <!--  <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
+    </form> -->
   </div>
 </nav>
 
