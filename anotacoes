@@ -9,7 +9,8 @@
  Taglibs do spring security
  
  --> Evitando ataques do tipo CSRF-Cross site request forgery
- 	--> Parametro csrf
+ 	--> Parametro csrf, 
+ 		--> Toda o form que estiver sem o form: form vai quebrar devido o token
  	
 --> Personalizando o Login e Logout 
 
