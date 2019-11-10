@@ -3,8 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp" %>
+<c:url value="/" var="contextPath" />
+
+<tags:pageTemplate titulo="${produto.titulo }">
 
 	<article id="livro-css-eficiente">
 		<header id="product-highlight" class="clearfix">
@@ -20,7 +23,7 @@
 		</header>
 
 		<section class="buy-options clearfix">
-			<form:form servletRelativeAction="/carrinho/add" method="post" cssClass="container">
+			<form:form action='${contextPath }carrinho/add' method="post" cssClass="container">
 				<input type="hidden" value="${produto.id }" name="produtoId" >
 				<ul id="variants" class="clearfix">
 					<c:forEach items="${produto.precos }" var="preco">
@@ -51,9 +54,9 @@
 					Número de páginas: <span>${produto.paginas}</span>
 				</p>
 				<p></p>
-				<p>Data de publicação: <span class="publishedAt">
-				<fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time }"/>
-				</span></p>
+				<p>Data de publicação: 
+					<span><fmt:formatDate value="${produto.dataLancamento.time }" pattern="dd/MM/yyyy"/></span>
+				</p>
 				<p>
 					Encontrou um erro? <a href='/submissao-errata' target='_blank'>Submeta uma errata</a>
 				</p>
@@ -61,7 +64,4 @@
 		</div>
 	</article>
 
-	
-<%@include file="/WEB-INF/views/rodape.jsp" %>
-</body>
-</html>
+</tags:pageTemplate>

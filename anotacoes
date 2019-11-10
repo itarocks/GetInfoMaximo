@@ -22,10 +22,21 @@
 
 --> TAG do TEMPLATE
 	--> Framework de template 
+	--> deve ficar dentro de WEB-INF
 	
 control + shift + t --> arquivos java
 control + shift + r --> arquivos normais
 	
+-Preciso terminar os templates
+
+Aula 06 
+--> Usando a taglib fmt
+
+-- Internalizando o código 
+
+	LocaleChangeInterceptor
+		Locale Resolver
+		CookieLocaleResolver
  	
  	
  
