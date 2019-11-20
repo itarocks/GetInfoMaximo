@@ -6,11 +6,13 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.casadocodigo.loja.builders.ProdutoBuilder;
+import br.com.casadocodigo.loja.conf.DataSourceConfigurationTest;
 import br.com.casadocodigo.loja.conf.JPAConfiguration;
 import br.com.casadocodigo.loja.model.Produto;
 import br.com.casadocodigo.loja.model.TipoPreco;
@@ -18,7 +20,8 @@ import junit.framework.Assert;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 //aponta onde estão os arquivos de configuração
-@ContextConfiguration(classes = { JPAConfiguration.class,ProdutoDao.class })
+@ContextConfiguration(classes = { JPAConfiguration.class,ProdutoDao.class,DataSourceConfigurationTest.class })
+@ActiveProfiles("teste")
 public class ProdutoDAOTest {
 
 	

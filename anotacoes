@@ -39,6 +39,19 @@ Aula 06
 		CookieLocaleResolver
  	
  	
+--> Trabalhando com o Spring test
+	--> Introdução ao profiles
+
+	-->SecurityMockMVCRequestProcessor
+
+--> Envia email de compra de produto para o usuário.
+
+--> Utilizando o javamail
+
+--> Trabalhando com exceptions genericas 
+	ControllerAdvice, é um controller que observa os outros controllers
+	
+
  
  
     
