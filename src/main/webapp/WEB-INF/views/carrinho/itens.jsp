@@ -10,8 +10,10 @@
    <script> console.log("Finalização de compra de ${carrinhoCompras.quantidade} itens"); </script>
 </jsp:attribute>
 <jsp:body>
-
+		<div>${sucesso }</div>
+		<div>${falha }</div>
 	<section class="container middle">
+	
 		<h2 id="cart-title">Seu carrinho de compras</h2>
 		<table id="cart-table">
 			<colgroup>
