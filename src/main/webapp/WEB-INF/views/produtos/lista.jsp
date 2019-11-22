@@ -53,12 +53,10 @@
 		<div>${falha }</div>
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
-				<th>Titulo
-				</td>
-				<th>Descricao
-				</td>
-				<th>Páginas
-				</td>
+				<th>Titulo</th>
+				<th>Descricao</th>
+				<th>Precos</th>
+				<th>Páginas</th>
 			</tr>
 			<c:forEach items="${produtos }" var="produto">
 				<tr>
@@ -66,6 +64,7 @@
 						href="${s:mvcUrl('PC#detalhe').arg(0,produto.id).build() }">${produto.titulo }</a>
 					</td>
 					<td>${produto.descricao }</td>
+					<td>${produto.precos }</td>
 					<td>${produto.paginas }</td>
 
 				</tr>

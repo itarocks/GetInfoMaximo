@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Embeddable;
@@ -7,8 +8,15 @@ import javax.persistence.Embeddable;
 
 //vai ser colocado dentro do nosso produto
 @Embeddable
-public class Preco {
+public class Preco implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	
+
 	private BigDecimal valor;
 	
 	private TipoPreco tipo;
@@ -29,4 +37,9 @@ public class Preco {
 		this.tipo = tipo;
 	}
 
+	@Override
+	public String toString() {
+		return this.tipo.name() + " - " + this.valor;
+	}
+	
 }
