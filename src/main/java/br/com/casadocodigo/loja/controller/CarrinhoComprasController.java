@@ -46,6 +46,7 @@ public class CarrinhoComprasController {
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView itens() {
 		
+		if(true) throw new RuntimeException("Exceção Generica Acontecendo");
 		return new ModelAndView("carrinho/itens");
 	}
 	
