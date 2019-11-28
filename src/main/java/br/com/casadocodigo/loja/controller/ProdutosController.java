@@ -80,7 +80,6 @@ public class ProdutosController {
 		ModelAndView modelAndView = new ModelAndView("produtos/detalhe");
 		Produto produto = dao.find(id);
 		modelAndView.addObject("produto", produto);
-		if(true) throw new RuntimeException("Exceção Generica Acontecendo");
 		return modelAndView;
 	}
 
