@@ -51,7 +51,8 @@ Aula 06
 --> Trabalhando com exceptions genericas 
 	ControllerAdvice, é um controller que observa os outros controllers
 	
-
+--> Criando a aplicação no Heroku
+comando: heroku apps:create <nome-do-projeto>
  
  
     

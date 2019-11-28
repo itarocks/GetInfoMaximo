@@ -9,6 +9,29 @@
 	<packaging>war</packaging>
 	<build>
 		<finalName>casadocodigo</finalName>
+		<plugins>
+    	<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-dependency-plugin</artifactId>
+		    <version>2.3</version>
+		    <executions>
+		        <execution>
+		            <phase>package</phase>
+		            <goals><goal>copy</goal></goals>
+		            <configuration>
+		                <artifactItems>
+		                    <artifactItem>
+		                        <groupId>com.github.jsimone</groupId>
+		                        <artifactId>webapp-runner</artifactId>
+		                        <version>9.0.8.0</version>
+		                        <destFileName>webapp-runner.jar</destFileName>
+		                    </artifactItem>
+		                </artifactItems>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+    </plugins>
 	</build>
 	<properties>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
@@ -34,6 +57,11 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.4-1201-jdbc41</version>
+</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>jstl-api</artifactId>
@@ -178,11 +206,18 @@
 			<version>4.0.0.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+<dependency>
+    <groupId>postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.1-901-1.jdbc4</version>
+</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
 		<dependency>
-		    <groupId>javax.mail</groupId>
-    <artifactId>mail</artifactId>
-    <version>1.4.7</version>
-</dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
 	</dependencies>
 </project>
