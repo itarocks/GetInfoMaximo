@@ -49,12 +49,12 @@ public class ServletSpringMvc extends AbstractAnnotationConfigDispatcherServletI
 		registration.setMultipartConfig(new MultipartConfigElement(""));
 	}
 	
-@Override
+/*@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		// TODO Auto-generated method stub
 		super.onStartup(servletContext);
 		servletContext.addListener(RequestContextListener.class);
 		servletContext.setInitParameter("spring.profiles.active", "dev");
 	}
-
+*/
 }
