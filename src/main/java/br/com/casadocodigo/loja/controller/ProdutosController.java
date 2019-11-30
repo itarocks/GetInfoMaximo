@@ -56,9 +56,12 @@ public class ProdutosController {
 		if (result.hasErrors()) {
 			return form(produto);
 		}
-
-		String path = fileSaver.write("arquivos-sumario", sumario);
-		produto.setPathSumari(path);
+		
+		
+		if (sumario.getSize() > 0) {
+			String path = fileSaver.write("arquivos-sumario", sumario);
+			produto.setPathSumari(path);
+		}
 
 		System.out.println(produto);
 		dao.gravar(produto);
@@ -89,6 +92,5 @@ public class ProdutosController {
 
 		return dao.find(id);
 	}
-	
 
 }
