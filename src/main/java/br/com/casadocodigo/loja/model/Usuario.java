@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -18,7 +19,10 @@ public class Usuario implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
+	@GeneratedValue
 	@Id
+	private Integer Id;
+	
 	private String email;
 	private String senha;
 	private String nome;
