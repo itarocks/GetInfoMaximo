@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.conf;
 
+import java.net.URI;
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
@@ -21,13 +22,10 @@ public class JPAConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, Properties additionalProperties) {
 
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
-
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.model");
-		factoryBean.setDataSource(dataSource);
-
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		factoryBean.setJpaVendorAdapter(vendorAdapter);
-
+		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.model");
+		factoryBean.setDataSource(dataSource);
 		factoryBean.setJpaProperties(additionalProperties());
 
 		return factoryBean;
@@ -36,10 +34,14 @@ public class JPAConfiguration {
 	@Bean
 	@Profile("dev")
 	public Properties additionalProperties() {
+		//Properties props = new Properties();
+		//props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		//props.setProperty("hibernate.show_sql", "true");
+		//props.setProperty("hibernate.hbm2ddl.auto", "update");
 		Properties props = new Properties();
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 		props.setProperty("hibernate.show_sql", "true");
-		props.setProperty("hibernate.hbm2ddl.auto", "update");
+		props.setProperty("hibernate.hbm2ddl.auto", "create");
 		return props;
 	}
 
@@ -47,11 +49,18 @@ public class JPAConfiguration {
 	@Profile("dev")
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUsername("root");
-		dataSource.setPassword("AdminSemSenha");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/financas");
-
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		//dataSource.setUsername("root");
+		//dataSource.setPassword("AdminSemSenha");
+		//dataSource.setUrl("jdbc:mysql://localhost:3306/financas");
+		//dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		
+		dataSource.setDriverClassName("org.postgresql.Driver");
+	    dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+	    dataSource.setUsername("postgres");
+	    dataSource.setPassword("123456");
+	    
+		
+		
 		return dataSource;
 	}
 

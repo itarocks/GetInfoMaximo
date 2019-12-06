@@ -1,3 +1,7 @@
+Verificar LOG do heroku
+heroku logs --app cdcgetinfomaximo
+
+
 senha do PGADMIN: 123456
 5432
 
