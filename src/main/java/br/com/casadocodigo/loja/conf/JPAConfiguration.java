@@ -34,14 +34,14 @@ public class JPAConfiguration {
 	@Bean
 	@Profile("dev")
 	public Properties additionalProperties() {
-		//Properties props = new Properties();
-		//props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-		//props.setProperty("hibernate.show_sql", "true");
-		//props.setProperty("hibernate.hbm2ddl.auto", "update");
 		Properties props = new Properties();
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		props.setProperty("hibernate.show_sql", "true");
-		props.setProperty("hibernate.hbm2ddl.auto", "create");
+		props.setProperty("hibernate.hbm2ddl.auto", "update");
+		//Properties props = new Properties();
+		//props.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+		//props.setProperty("hibernate.show_sql", "true");
+		//props.setProperty("hibernate.hbm2ddl.auto", "create");
 		return props;
 	}
 
@@ -49,15 +49,15 @@ public class JPAConfiguration {
 	@Profile("dev")
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		//dataSource.setUsername("root");
-		//dataSource.setPassword("AdminSemSenha");
-		//dataSource.setUrl("jdbc:mysql://localhost:3306/financas");
-		//dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUsername("root");
+		dataSource.setPassword("AdminSemSenha");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/financas");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		
-		dataSource.setDriverClassName("org.postgresql.Driver");
-	    dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
-	    dataSource.setUsername("postgres");
-	    dataSource.setPassword("123456");
+		//dataSource.setDriverClassName("org.postgresql.Driver");
+	   // dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+	    //dataSource.setUsername("postgres");
+	   // dataSource.setPassword("123456");
 	    
 		
 		
